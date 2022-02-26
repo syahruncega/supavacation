@@ -64,12 +64,12 @@ export default NextAuth({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
-    EmailProvider({
-      maxAge: 10 * 60, // Magic links are valid for 10 min only
-      sendVerificationRequest,
-    }),
+    // EmailProvider({
+    //   maxAge: 10 * 60, // Magic links are valid for 10 min only
+    //   sendVerificationRequest,
+    // }),
   ],
-  events: { createUser: sendWelcomeEmail },
+  // events: { createUser: sendWelcomeEmail },
   adapter: PrismaAdapter(prisma),
   pages: {
     signIn: "/",
